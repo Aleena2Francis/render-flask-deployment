@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+
+<form action = "#" method="post">   <!-- # means When submitted, stay on the same page and scroll to the top (the # anchor)."
+                                    So when you submit, the URL becomes:http://localhost:5000/#  -->
+    <p>Name:</p>
+    <p><input type ="text" name="nm" ></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+<img src="{{url_for('login.static',filename='logg.jpg')}}"> <!--If you're using a Blueprint and defined a custom static folder Then your static files must be referenced like BlueprintName(parameter).static.-->
+{% endblock %}

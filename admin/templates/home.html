@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<h1>HIIIII</h1>
+<img src="{{ url_for('Blue.static',filename='images/img.jpeg')}}" alt="Logo"> <!--url_for('static', filename='...') automatically maps to /static/filename URL.url_for It generates a URL for the endpoint (route or static resource) defined in your app.. 'static' is a special built-in endpoint in Flask
+Flask automatically creates a route for static files.
+Flask does the following:Sees that 'static' is a special endpoint.Knows from app = Flask(__name__) that your static_folder is static/.Replaces it in the default rule:
+/static/<path:filename> Substitutes filename="css/style.css"
+Returns: /static/css/style.css
+What the Browser Sees
+Your HTML finally becomes:<link rel="stylesheet" href="/static/css/style.css">
+And the browser requests: http://localhost:5000/static/css/style.css
+Flask automatically serves this file from the static/ folder.-->
+{% endblock %}
+
+<!--to add static files use inline methods in template(html) and only def is use url_for in place of link-->
